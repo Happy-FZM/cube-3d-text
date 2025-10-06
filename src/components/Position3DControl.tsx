@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Input, Flex, Typography } from 'antd';
+import { useLanguage } from '../language';
 
 const { Text } = Typography;
 
@@ -25,6 +26,7 @@ const DraggablePrefix: React.FC<{
     disabled: boolean;
     onValueChange: (value: number) => void;
 }> = ({ label, color, value, range, step, disabled, onValueChange }) => {
+    const { gLang } = useLanguage();
     const [isDragging, setIsDragging] = useState(false);
     const [dragStartValue, setDragStartValue] = useState(0);
     const [dragStartY, setDragStartY] = useState(0);
@@ -133,7 +135,7 @@ const DraggablePrefix: React.FC<{
             }}
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
-            title={`拖拽调整 ${label} 轴位置`}
+            title={gLang('dragToAdjust', { label })}
         >
             <Text
                 style={{
