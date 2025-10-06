@@ -19,7 +19,9 @@ export interface TextOptions {
     x: number;
     y: number;
     z: number;
-    rotY: number
+    rotY: number;
+    rotX: number;
+    rotZ: number;
     materials: TextMaterials;
     overlay?: OverlayRendererInfo;
     outlineWidth: number;
