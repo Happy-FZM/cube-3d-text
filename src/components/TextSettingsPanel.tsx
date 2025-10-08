@@ -109,6 +109,48 @@ const TextSettingsPanel: React.FC<TextSettingsPanelProps> = ({
                     />
                 </Flex>
             </Form.Item>
+            <Form.Item label={gLang('leftRightRotate')}>
+                <Flex gap={'small'}>
+                    <Slider
+                        style={{ flex: 1 }}
+                        min={-180}
+                        max={180}
+                        step={1}
+                        value={textOptions.rotX}
+                        onChange={(val) => onTextOptionsChange({ ...textOptions, rotX: val })}
+                    />
+                    <InputNumber
+                        style={{ width: 64 }}
+                        variant="filled"
+                        min={-180}
+                        max={180}
+                        step={1}
+                        value={textOptions.rotX}
+                        onChange={(val) => onTextOptionsChange({ ...textOptions, rotX: val ?? 0 })}
+                    />
+                </Flex>
+            </Form.Item>
+            <Form.Item label={gLang('planeRotate')}>
+                <Flex gap={'small'}>
+                    <Slider
+                        style={{ flex: 1 }}
+                        min={-180}
+                        max={180}
+                        step={1}
+                        value={textOptions.rotZ}
+                        onChange={(val) => onTextOptionsChange({ ...textOptions, rotZ: val })}
+                    />
+                    <InputNumber
+                        style={{ width: 64 }}
+                        variant="filled"
+                        min={-180}
+                        max={180}
+                        step={1}
+                        value={textOptions.rotZ}
+                        onChange={(val) => onTextOptionsChange({ ...textOptions, rotZ: val ?? 0 })}
+                    />
+                </Flex>
+            </Form.Item>
             <Form.Item label={gLang('fontSize')}>
                 <Flex gap={'small'}>
                     <Slider
